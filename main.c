@@ -1,5 +1,5 @@
 main()     {
 	    biggest2();
 	    factorial();
-	makefile();
+	makefile1();
 }	    
