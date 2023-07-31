@@ -2,10 +2,19 @@ pipeline {
       agent any
       stages{
         stage ("build") {
+        parallel {
+        stage ("build1") {
          steps {
           echo "this is the build stage"
       }
 } 
+         stage ("build2") {
+         steps {
+          echo "this is the build stage"
+      }
+   } 
+ }
+}
         stage ("deploy") {
          steps {
           echo "this is the deploy stage"
