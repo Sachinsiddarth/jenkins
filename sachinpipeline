@@ -5,12 +5,12 @@ pipeline {
         parallel {
         stage ("build1") {
          steps {
-          echo "this is the build stage"
+          echo "this is the build1 stage"
       }
 } 
          stage ("build2") {
          steps {
-          echo "this is the build stage"
+          echo "this is the build2 stage"
       }
    } 
  }
