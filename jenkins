@@ -1,0 +1,33 @@
+pipeline {
+	agent none
+	stages {
+		stage("build") {
+			agent { label "master"}
+			steps {
+				echo"this is build stage"
+			}
+		}
+		stage("deploy parallel") {
+			parallel {
+				stage("deploy1") {
+					agent { label "dev1" }
+					steps {
+						echo"this is deploy1 stage"
+					}
+				}
+				stage("deploy2") {
+					agent { label "dev1" }
+					steps {
+						echo"this is deploy2 stage"
+					}
+				}
+			}
+		}
+		stage("test") {
+			agent { label "dev2" }
+			steps {
+				echo"this is test stage"
+			}
+		}
+	}
+}
